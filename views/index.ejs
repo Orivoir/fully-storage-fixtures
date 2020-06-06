@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>articles</title>
+        <link rel="stylesheet" href="/public/index.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>
+                Articles fixtures
+                <small>( <%= articles.length %> articles )</small>
+            </h1>
+        </header>
+
+        <main>
+
+            <section>
+
+                <% if( articles.length > 0 ){ %>
+
+                    <ul class="article-list">
+                    <%
+                        articles.forEach( function( article ) {
+
+                            %>
+
+                            <li class="article-item">
+                                <h2>
+                                    <%= article.title %>
+                                </h2>
+
+                                <p>
+                                    <%= article.contentText %>
+                                </p>
+
+                            </li>
+
+                            <%
+
+                        } );
+                    %>
+                    </ul>
+
+                <% } else {
+
+                    %>
+                    <p>
+                        No articles found.
+                    </p>
+                    <%
+
+                } %>
+
+            </section>
+
+        </main>
+
+    </body>
+
+</html>
